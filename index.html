@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item  Application </title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" >
+        <div ng-controller="myController">
+            <h2>Item List</h2>
+            <h2 ng-model="tasklen">Total Number of Tasks :{{tasklen}}</h2>
+            <ul>
+                <li ng-repeat="task in tasks">
+                    {{task.name}}
+                    <button ng-click="deleteTask(task)">Delete Task</button>
+                </li>
+            </ul>
+            <div>
+                <label>New Task:</label>
+                <input type="text" ng-model="newTaskName">
+                <button ng-click="addTask()">Add Task</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
